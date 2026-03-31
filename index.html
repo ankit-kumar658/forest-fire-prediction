@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fire Prediction System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="safe-mode">
+  <main class="main-container" role="main" aria-labelledby="page-title">
+    <h1 id="page-title" class="title">🔥 Fire Prediction System</h1>
+
+    <form id="input-form" class="input-box" onsubmit="return false;" aria-describedby="result">
+      <label for="temp">Temperature (°C)</label>
+      <input type="number" id="temp" name="temp" placeholder="e.g. 45" inputmode="numeric" />
+
+      <label for="humidity">Humidity (%)</label>
+      <input type="number" id="humidity" name="humidity" placeholder="e.g. 20" inputmode="numeric" />
+
+      <label for="wind">Wind Speed (km/h)</label>
+      <input type="number" id="wind" name="wind" placeholder="e.g. 35" inputmode="numeric" />
+
+      <div class="buttons">
+        <button type="button" id="predict-btn">Predict Fire</button>
+        <button type="button" id="reset-btn" class="ghost">Reset</button>
+      </div>
+    </form>
+
+    <section id="result-box" class="result-box" aria-live="polite">
+      <h2 id="result" class="result">Status: Waiting for input...</h2>
+      <p id="explain" class="explain">Enter measurements and click <strong>Predict Fire</strong> or type to auto-update.</p>
+    </section>
+  </main>
+
+  
+  <audio id="alarm-sound" src="alarm.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
